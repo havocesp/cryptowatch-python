@@ -1,10 +1,9 @@
-import requests
-import urllib
 import urllib.parse
 from urllib.parse import urljoin
 import logging
 
 import cryptowatch.Msg as Msg
+from security import safe_requests
 
 API_URL = 'https://api.cryptowat.ch/'
 logger = logging.getLogger(__name__)
@@ -20,7 +19,7 @@ def _raiseIfError(response):
     raise Msg.ApiRequestException(response)
 
 def _get_response(url):
-    resp = requests.get(url)
+    resp = safe_requests.get(url)
     _raiseIfError(resp)
     to_json = resp.json()
     return resp.json()
