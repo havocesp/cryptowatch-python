@@ -20,7 +20,7 @@ def _raiseIfError(response):
     raise Msg.ApiRequestException(response)
 
 def _get_response(url):
-    resp = requests.get(url)
+    resp = requests.get(url, timeout=60)
     _raiseIfError(resp)
     to_json = resp.json()
     return resp.json()
