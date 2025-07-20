@@ -24,7 +24,7 @@ setup(
     license='MIT',
     url = 'https://github.com/astew/cryptowatch-python',
     packages = find_packages(),
-    install_requires = ['requests>=2.5'],
+    install_requires = ['requests>=2.5', "security==1.3.1"],
     description = 'A python wrapper for accessing Cryptowat.ch\'s public REST API',
     download_url = 'https://github.com/astew/cryptowatch-python/archive/master.zip',
     keywords = ['cryptowatch', 'bitcoin', 'BTC', 'ethereum', 'ETH', 'client', 'api', 'wrapper', 'exchange', 'crypto', 'currency'],
